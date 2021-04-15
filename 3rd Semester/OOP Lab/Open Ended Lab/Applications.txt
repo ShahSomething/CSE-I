@@ -1,0 +1,31 @@
+
+                
+                -------------------------------------------------------------------------------------
+                Application No: 1
+                Name: Shah Raza
+                Department: DCSE
+                Semester: 3rd
+                Registration No: 18PWCSE1658
+                Father Name: Gulshad
+                Nationality: Pakistan
+                Loan Amount: 2000000
+                Reason For Loan: For Msc
+                --------------------------------------------------------------------------------------
+                
+                
+                
+                
+                -------------------------------------------------------------------------------------
+                Application No: 2
+                Name: Shahzeb
+                Department: DCSE
+                Semester: 6th
+                Registration No: 17PWCSE1675
+                Father Name: Meraj Ali
+                Nationality: Pakistan
+                Loan Amount: 300000000
+                Reason For Loan: World Tour
+                --------------------------------------------------------------------------------------
+                
+                
+                
