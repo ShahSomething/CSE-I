@@ -1,0 +1,14 @@
+t=-10:0.5:10;
+X=1*exp(-0.2+0.5*i*t);
+subplot(4,1,1);
+stem(t,abs(X),'filled');
+title('Magnitude');
+subplot(4,1,2);
+stem(t,angle(X),'filled');
+title('Phase');
+subplot(4,1,3);
+stem(t,real(X),'filled');
+title('Real Part');
+subplot(4,1,4);
+stem(t,imag(X),'filled');
+title('Imaginary Part');
