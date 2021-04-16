@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "Number of Sub directories: "
+ls -l | grep ^d | wc -l
