@@ -1,0 +1,6 @@
+# SS3
+# Usage: SS3
+echo "Please enter your surname"
+echo "followed by your first name:"
+read name1 name2
+echo "Welcome to CSE Dept., UET, $name2 $name1"
