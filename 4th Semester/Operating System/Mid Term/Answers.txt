@@ -1,0 +1,86 @@
+In this program fork() is called inside a loop. The formula for new childs created in this case is
+(2^n)-1=> 2^5-1=32-1=31.So 31 child processes will be created. As for the threads I drew a diagram 
+of the process tree and concluded that in total 62 threads will be created.
+Threads calculation:
+Let P be the parent process and C1,C2,C3.....C31 be the
+child processes then:
+P and C1: 5 new threads each.
+C2,C6: 4 new threads each.
+C3,C7,C10,C16: 3 new threads each.
+C4,C8,C11,C13,C17,C19,C22,C26: 2 new threads each.
+C5,C9,C12,C14,C15,C18,C20,C21,C23,C24,C25,C27,C28,C29,C30,C31: 1 new thread each.
+Total new Threads: 62.
+ 
+
+
+If threads were allowed to share stack memory the following complications will be made:
+(1) Threads could change each others stack.
+(2) Termination of one thread could possibly destroy stack for other threads.
+
+Explaination:
+If stack is shared, the change of variable value in one thread will change that variable's
+value in the other thread as well but we don't want that to happen because each thread could be
+performing a completely differet task and the change will affect the desired result.
+Also we know that when a program of function terminates, it's stack is distroyed, so if one thread completes 
+it's task the stack will be distroyed but we needed that stack in other threads too. 
+
+There are 6 Scheduling Algorithms:
+1.First Come First Serve (FCFS):
+- The scheduler picks the process that comes first in the queue.
+- Average waiting time is more.
+- Non-Preemptive (Process is not shifted to ready queue due to interrupt or expiration of time-slice).
+- Convoy effect could occur.(Smaller process waiting for bigger processes to terminate).
+- Less CPU utilization.
+- More response time.
+
+2. Shortest Job First (SJF):
+- Each Process has a projected next CPU-burst.
+- The scheduler picks the process with smallest next CPU-burst.
+- Can be Preemptive or Non-Preemptive.
+- In case of Preemptive, we are concerned with shortest remaining time first.
+- Less average waiting time.
+- Less Response time.
+- More CPU utilization.
+
+3. Round Robin (RR) Scheduling:
+- A unit time called time quantum is defined.
+- Each Process in the ready queue gets CPU burst for that amount of time.
+- Much less respone time.
+- Good CPU utilization.
+- Overhead could occur (due to context switching) if the time slice is smaller.
+
+4. Priority Scheduling:
+- Each Process is allocated a Priority number (small no=high priority).
+- The scheduler picks the process with higher priority first.
+- Starvation(less proirity processes never getting CPU burst) could occur.
+- Aging (increasing priority) is used to prevent starvation.
+- same priority processes use RR algorithm.
+
+5. Multi-livel Queue Scheduling:
+- Each Queue has different priority.
+- High Priority Processes are placed in High priority queues.
+- Processes can not change queues in which they are placed.
+- less priority queues will have to wait for high priority queues to get empty.
+
+6. Multi-livel Feedback Queue Scheduling:
+- Processes can jump from queues to queues.
+- Aging and Round Robin techeques are also used.
+- Very good CPU utilization.
+
+
+The difference between parallel and concurrent processing is that in parallel processing multiprocesses can run on
+multicores at the same time while in concurrent processing every process make progress but they never run at the same 
+time.
+Complications due to Concurrent processing:
+1.Overhead due to constant Context switching.
+2.Race condition could occur in cooperative processes(one process trying to access data that has not been yet 
+produced by another process).
+3.Less important tasks getting the same CPU burst as much more impotant tasks.
+4.Slip-screen idea can be implimented with parallel processing but not concurrent processing. 
+
+https://docs.google.com/forms/u/1/d/e/1FAIpQLScmOeCu0um4gBo2S4Y443ENKPHHc6E6mujBAwIM36ZNsaYQ3A/viewform?usp=form_confirm&edit2=2_ABaOnufOrr7sTLEUnFeZuxe_Vg1lSL9x1EQmwL33Fse_
+
+
+
+
+
