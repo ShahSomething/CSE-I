@@ -1,0 +1,6 @@
+# SS2
+# Usage: SS2
+# An interactive shell script
+echo "What is your name?"
+read name
+echo "Hello $name. Assalam-o-Alaikum."
