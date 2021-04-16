@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo "What would you like to do?"
+echo "1. Search for a file."
+echo "2. Names of logged-in users."
+
+read Choice
+
+case $Choice in
+1) echo "Enter file name"
+   read Filename
+   test -f $Filename && echo "This File exists." || echo "This File does not exist."
+
+;;
+2)
+	echo "The Logged-in Users are: "
+	who ;;
+*) echo "Invalid Entry." ;; 
+esac
+
